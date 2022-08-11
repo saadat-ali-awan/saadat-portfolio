@@ -23,7 +23,7 @@ export default function SidePanel() {
     <div className={styles["side-panel"]}>
       <div className={styles["side-panel__header"]}>
         <div className={styles["side-panel__profile-image"]}>
-          <Image 
+          <Image
             src="https://avatars.githubusercontent.com/u/35307862?v=4"
             alt="profile_image"
             width={200}
@@ -116,8 +116,8 @@ export default function SidePanel() {
           </div>
         </div>
       </div>
-      <div className="side-panel__footer">
-        <div className="side-panel__footer-item">
+      <div className={styles["side-panel__footer"]}>
+        <div className={styles["side-panel__footer-item"]}>
           <a href={url} title="Resume" target="_blank" rel="noopener" download>Download Resume</a>
         </div>
       </div>
