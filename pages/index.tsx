@@ -17,11 +17,11 @@ export default function Home() {
           <h1 className={styles.title}>
             I'm <strong>Saadat Ali</strong>
           </h1>
+          <footer className={styles.footer}>
+            Made by&nbsp;<a href="https://twitter.com/Saadat02021999">Saadat Ali</a>
+          </footer>
         </main>
       </div>
-      <footer className={styles.footer}>
-        Made by&nbsp;<a href="https://twitter.com/Saadat02021999">Saadat Ali</a>
-      </footer>
     </div>
   )
 }
