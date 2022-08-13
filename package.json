@@ -24,6 +24,7 @@
     "@types/fetch-mock": "^7.3.5",
     "@types/jest": "^28.1.6",
     "@types/react": "18.0.9",
+    "eslint": "^8.21.0",
     "fetch-mock": "^9.11.0",
     "fetch-mock-jest": "^1.5.1",
     "jest": "28.1.0",
