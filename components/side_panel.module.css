@@ -15,9 +15,13 @@
   align-items: center;
 }
 
+.side-panel__profile-image {
+  min-width: 200px;
+  min-height: 200px;
+  max-height: 200px;
+}
+
 .side-panel_profile-image {
-  width: 100px;
-  height: 100px;
   border-radius: 50%;
 }
 
@@ -66,6 +70,10 @@
   margin-bottom: 4px;
 }
 
+.side-panel__body-item-content > p > a {
+  color: #000;
+}
+
 .side-panel__body-item {
   display: flex;
   flex-direction: row;
@@ -91,14 +99,14 @@
   margin: 0.5rem 1rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background-color: #693CC9;
+  background-color: #564f8f;
   ;
 }
 
 .side-panel__footer-item > a:hover {
-  background-color: #5A3CC9;
+  background-color: #5f589f;
 }
 
 .side-panel__footer-item > a:active {
-  background-color: #4e3CC9;
+  background-color: #6f69a9;
 }
