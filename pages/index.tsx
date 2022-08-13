@@ -3,6 +3,10 @@ import Image from 'next/image'
 
 import styles from '@/pages/index.module.css'
 import SidePanel from '@/components/side_panel'
+import FirstSection from '@/components/homepage/first_section'
+import SecondSection from '@/components/homepage/second_section'
+import NavigationMenu from '@/components/navigation_menu'
+import { FifthSection, FourthSection, SixthSection, ThirdSection } from '@/components/homepage/third_section'
 
 export default function Home() {
   return (
@@ -10,13 +14,18 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="devicon.min.css"></link>
       </Head>
       <div className={styles['main-body']}>
         <SidePanel />
-        <main>
-          <h1 className={styles.title}>
-            I'm <strong>Saadat Ali</strong>
-          </h1>
+        <NavigationMenu />
+        <main className={styles['main']}>
+          <FirstSection />
+          <SecondSection />
+          <ThirdSection />
+          <FourthSection />
+          <FifthSection />
+          <SixthSection />
           <footer className={styles.footer}>
             Made by&nbsp;<a href="https://twitter.com/Saadat02021999">Saadat Ali</a>
           </footer>
