@@ -6,11 +6,21 @@
 }
 
 .main {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 100vh;
+  padding-left: 1rem;
+}
+
+.main > section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 1;
+  overflow-y: auto;
+  height: 100vh;
+  max-height: 100vh;
 }
 
 .main-body {
