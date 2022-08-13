@@ -6,9 +6,12 @@ import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-ic
 import { useEffect } from "react";
 import { useState } from "react";
 import styles from './side_panel.module.css';
+import { useSectionState } from "context/section_state_provider";
 
 export default function SidePanel() {
   const [url, setUrl] = useState("");
+  const { sectionState } = useSectionState();
+
   useEffect(
     () => {
       // get resume link from api
@@ -23,20 +26,25 @@ export default function SidePanel() {
     <div className={styles["side-panel"]}>
       <div className={styles["side-panel__header"]}>
         <div className={styles["side-panel__profile-image"]}>
-          <Image
-            src="https://avatars.githubusercontent.com/u/35307862?v=4"
-            alt="profile_image"
-            width={200}
-            height={200}
-            className={styles["side-panel_profile-image"]}
-            data-testid="profile_image"
-          />
+          {
+            sectionState.section_number === 0 ? (
+              <></>) : (
+                <Image
+                  src="https://avatars.githubusercontent.com/u/35307862?v=4"
+                  alt="profile_image"
+                  width={200}
+                  height={200}
+                  className={styles["side-panel_profile-image"]}
+                  data-testid="profile_image"
+                />
+              )
+          }
         </div>
         <div className={styles["side-panel__header-title"]}>
           <h2 role='heading'>Saadat Ali</h2>
         </div>
         <div className={styles["side-panel__header-subtitle"]}>
-          <h3 data-testid="profession">Full Stack Developer</h3>
+          <h3 data-testid="profession">Backend Developer</h3>
         </div>
         <div className={styles["side-panel__header-social"]}>
           <a href="https://www.github.com/Saadat123456" title="GitHub Link" target="_blank" rel="noopener">
