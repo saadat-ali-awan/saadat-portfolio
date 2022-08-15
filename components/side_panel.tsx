@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import styles from './side_panel.module.css';
 import { useSectionState } from "../context/section_state_provider";
-import Flip from 'react-reveal/Flip';
+const Flip = require('react-reveal/Flip');
 
 export default function SidePanel() {
   const [url, setUrl] = useState("");
