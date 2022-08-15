@@ -5,13 +5,52 @@
 
 .full-profile-image {
   height: 70%;
+  left: 100px;
+  position: relative;
 }
 
 .left-side {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 30%;
   padding-right: 2rem;
+  align-self: flex-start;
+  height: 100%;
+}
+
+.icon-container {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  background-color: #564f8f0a;
+  padding: 0.8rem;
+  border-radius: 50%;
+}
+
+.icon-container:nth-child(1) {
+  top: 50px;
+  left: 20px;
+}
+
+.icon-container:nth-child(2) {
+  top: -50px;
+}
+
+.icon-container:nth-child(3) {
+  left: -75px;
+  top: 20px;
+}
+
+.icons-container {
+  position: relative;
+}
+
+.icons-container:nth-child(1) {
+  bottom: 150px;
+}
+
+.icons-container:nth-child(2) {
+  top: 150px;
 }
