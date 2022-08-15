@@ -448,18 +448,54 @@ exports[`renders homepage unchanged 1`] = `
           class="profile-section"
           id="section-2"
         >
-          <div
-            class="container"
+          <h2
+            class="section-heading"
           >
-            <h1
-              class="title"
+            Skills
+          </h2>
+          <div
+            class="columns"
+          >
+            <div
+              class="column"
             >
-              I'm 
-              <strong>
-                Saadat Ali
-              </strong>
-               Second Container
-            </h1>
+              <h2>
+                Backend
+              </h2>
+              <ul
+                class="skills-list"
+              >
+                <li>
+                  Ruby on Rails
+                </li>
+                <li>
+                  Postgres SQL
+                </li>
+                <li>
+                  RSpec
+                </li>
+              </ul>
+            </div>
+            <div
+              class="column"
+            >
+              <h2>
+                Frontend
+              </h2>
+              <ul
+                class="skills-list"
+              >
+                <li>
+                  React
+                </li>
+                <li>
+                  Redux
+                </li>
+                <li>
+                  Jest
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
         <section
