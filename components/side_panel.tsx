@@ -27,29 +27,6 @@ export default function SidePanel() {
     <div className={styles["side-panel"]}>
       <div className={styles["side-panel__header"]}>
         <div className={styles["side-panel__profile-image"]}>
-          {/* {
-            sectionState.section_number === 0 ? (
-              <Flip left>
-                <Image
-                  src="/profile_alternate.png"
-                  alt="profile_image"
-                  width={200}
-                  height={200}
-                  className={styles["side-panel_profile-image"]}
-                  data-testid="profile_image"
-                />
-              </Flip>
-              ) : (
-                <Image
-                  src="https://avatars.githubusercontent.com/u/35307862?v=4"
-                  alt="profile_image"
-                  width={200}
-                  height={200}
-                  className={styles["side-panel_profile-image"]}
-                  data-testid="profile_image"
-                />
-              )
-          } */}
           <Flip left opposite cascade when={sectionState.section_number===0} duration={500} delay={1000}>
             <Image
               src="/profile_alternate.png"
