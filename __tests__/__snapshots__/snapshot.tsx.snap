@@ -17,30 +17,64 @@ exports[`renders homepage unchanged 1`] = `
           <div
             class="side-panel__profile-image"
           >
-            <span
-              style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            <div
+              class="react-reveal"
+              style="opacity: 1;"
             >
               <span
-                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
               >
+                <span
+                  style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"
+                    style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                  />
+                </span>
                 <img
-                  alt=""
-                  aria-hidden="true"
-                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"
-                  style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                  alt="profile_image_alternate"
+                  class="side-panel_profile-image"
+                  data-nimg="intrinsic"
+                  data-testid="profile_image_alternate"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
                 />
+                <noscript />
               </span>
-              <img
-                alt="profile_image"
-                class="side-panel_profile-image"
-                data-nimg="intrinsic"
-                data-testid="profile_image"
-                decoding="async"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-              />
-              <noscript />
-            </span>
+            </div>
+            <div
+              class="react-reveal"
+              style="opacity: 0;"
+            >
+              <span
+                style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+              >
+                <span
+                  style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"
+                    style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                  />
+                </span>
+                <img
+                  alt="profile_image"
+                  class="side-panel_profile-image"
+                  data-nimg="intrinsic"
+                  data-testid="profile_image"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                />
+                <noscript />
+              </span>
+            </div>
           </div>
           <div
             class="side-panel__header-title"
@@ -57,7 +91,7 @@ exports[`renders homepage unchanged 1`] = `
             <h3
               data-testid="profession"
             >
-              Full Stack Developer
+              Backend Developer
             </h3>
           </div>
           <div
@@ -274,27 +308,244 @@ exports[`renders homepage unchanged 1`] = `
           </div>
         </div>
       </div>
-      <main>
-        <h1
-          class="title"
+      <div
+        class="navigation-menu"
+      >
+        <ul
+          class="menu"
         >
-          I'm 
-          <strong>
+          <li
+            class="menu-item"
+          >
+            <a
+              class="active"
+              href="#section-1"
+              title="section-link"
+            />
+          </li>
+          <li
+            class="menu-item"
+          >
+            <a
+              class=""
+              href="#section-2"
+              title="section-link"
+            />
+          </li>
+          <li
+            class="menu-item"
+          >
+            <a
+              class=""
+              href="#section-3"
+              title="section-link"
+            />
+          </li>
+          <li
+            class="menu-item"
+          >
+            <a
+              class=""
+              href="#section-4"
+              title="section-link"
+            />
+          </li>
+          <li
+            class="menu-item"
+          >
+            <a
+              class=""
+              href="#section-5"
+              title="section-link"
+            />
+          </li>
+          <li
+            class="menu-item"
+          >
+            <a
+              class=""
+              href="#section-6"
+              title="section-link"
+            />
+          </li>
+        </ul>
+      </div>
+      <main
+        class="main"
+      >
+        <section
+          class="profile-section first-section"
+          id="section-1"
+        >
+          <div
+            class="left-side"
+          >
+            <div
+              class="icons-container"
+            >
+              <div
+                class="icon-container"
+              >
+                <img
+                  alt="Ruby on Rails"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-plain-wordmark.svg"
+                />
+              </div>
+              <div
+                class="icon-container"
+              >
+                <img
+                  alt="RSpec"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rspec/rspec-original-wordmark.svg"
+                />
+              </div>
+              <div
+                class="icon-container"
+              >
+                <img
+                  alt="Postgres SQL"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
+                />
+              </div>
+            </div>
+            <div
+              class="icons-container"
+            >
+              <div
+                class="icon-container"
+              >
+                <img
+                  alt="React"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg"
+                />
+              </div>
+              <div
+                class="icon-container"
+              >
+                <img
+                  alt="Jest"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg"
+                />
+              </div>
+              <div
+                class="icon-container"
+              >
+                <img
+                  alt="Redux"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"
+                />
+              </div>
+            </div>
+          </div>
+          <img
+            alt="profile_image"
+            class="full-profile-image"
+            data-testid="full_profile_image"
+            src="/full_pic.png"
+          />
+        </section>
+        <section
+          class="profile-section"
+          id="section-2"
+        >
+          <div
+            class="container"
+          >
+            <h1
+              class="title"
+            >
+              I'm 
+              <strong>
+                Saadat Ali
+              </strong>
+               Second Container
+            </h1>
+          </div>
+        </section>
+        <section
+          class="profile-section"
+          id="section-3"
+        >
+          <div
+            class="container"
+          >
+            <h1
+              class="title"
+            >
+              I'm 
+              <strong>
+                Saadat Ali
+              </strong>
+               Third Container
+            </h1>
+          </div>
+        </section>
+        <section
+          class="profile-section"
+          id="section-4"
+        >
+          <div
+            class="container"
+          >
+            <h1
+              class="title"
+            >
+              I'm 
+              <strong>
+                Saadat Ali
+              </strong>
+               Fourth Container
+            </h1>
+          </div>
+        </section>
+        <section
+          class="profile-section"
+          id="section-5"
+        >
+          <div
+            class="container"
+          >
+            <h1
+              class="title"
+            >
+              I'm 
+              <strong>
+                Saadat Ali
+              </strong>
+               Fifth Container
+            </h1>
+          </div>
+        </section>
+        <section
+          class="profile-section"
+          id="section-6"
+        >
+          <div
+            class="container"
+          >
+            <h1
+              class="title"
+            >
+              I'm 
+              <strong>
+                Saadat Ali
+              </strong>
+               Sixth Container
+            </h1>
+          </div>
+        </section>
+        <footer
+          class="footer"
+        >
+          Made by 
+          <a
+            href="https://twitter.com/Saadat02021999"
+          >
             Saadat Ali
-          </strong>
-        </h1>
+          </a>
+        </footer>
       </main>
     </div>
-    <footer
-      class="footer"
-    >
-      Made by 
-      <a
-        href="https://twitter.com/Saadat02021999"
-      >
-        Saadat Ali
-      </a>
-    </footer>
   </div>
 </div>
 `;
