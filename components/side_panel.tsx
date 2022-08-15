@@ -8,6 +8,8 @@ import { useState } from "react";
 import styles from './side_panel.module.css';
 import { useSectionState } from "../context/section_state_provider";
 const Flip = require('react-reveal/Flip');
+import profile_alternate from '../public/profile_alternate.png';
+import path from 'path';
 
 export default function SidePanel() {
   const [url, setUrl] = useState("");
@@ -17,7 +19,7 @@ export default function SidePanel() {
     () => {
       // get resume link from api
       const fetchUrl = async () => {
-        const response = await fetch("/api/resume-link");
+        const response = await fetch(path.join(process.cwd(), 'api', "resume-link"));
         const data = await response.json();
         setUrl(data.url);
       };
@@ -29,7 +31,7 @@ export default function SidePanel() {
         <div className={styles["side-panel__profile-image"]}>
           <Flip left opposite cascade when={sectionState.section_number===0} duration={500} delay={1000}>
             <Image
-              src="/profile_alternate.png"
+              src={profile_alternate.src}
               alt="profile_image_alternate"
               width={200}
               height={200}

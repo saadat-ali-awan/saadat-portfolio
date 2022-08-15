@@ -1,4 +1,5 @@
 import styles from './first_section.module.css';
+import full_pic from '../../public/full_pic.png';
 
 export default function FirstSection() {
   return (
@@ -28,7 +29,7 @@ export default function FirstSection() {
         </div>
       </div>
       <img
-        src="/full_pic.png"
+        src={full_pic.src}
         alt="profile_image"
         className={styles["full-profile-image"]}
         data-testid="full_profile_image"
