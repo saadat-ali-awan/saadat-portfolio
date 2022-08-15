@@ -1,6 +1,7 @@
 import SidePanel from '../components/side_panel';
 import { render, screen } from '@testing-library/react';
 import fetch from 'jest-fetch-mock';
+import { SectionStateProvider } from '../context/section_state_provider';
 
 describe('SidePanel', () => {
   afterEach(() => {
@@ -8,7 +9,11 @@ describe('SidePanel', () => {
   }),
   beforeEach(async () => {
     fetch.mockResponseOnce(JSON.stringify({ url: '' }));
-    render(<SidePanel />);
+    render(
+      <SectionStateProvider>
+        <SidePanel />
+      </SectionStateProvider>
+    );
   }),
 
   // test h3 is in the side panel
@@ -22,7 +27,7 @@ describe('SidePanel', () => {
     const image = screen.getByTestId('profile_image')
     expect(image).toBeInTheDocument()
   })
-  
+
   // test user profession is in side panel
   it('renders a user profession', () => {
     const profession = screen.getByTestId(/profession/i)

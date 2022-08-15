@@ -1,4 +1,4 @@
-import { useSectionState } from 'context/section_state_provider';
+import { useSectionState } from '../context/section_state_provider';
 import { useRef, useState } from 'react';
 import { useEffect } from 'react';
 import styles from './navigation_menu.module.css'
