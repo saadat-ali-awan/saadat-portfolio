@@ -25,6 +25,10 @@
   transition: transform 0.3s ease-in-out;
 }
 
+.navigation-menu > ul[class="menu even-menu"] > li > a {
+  background-color: #fff;
+}
+
 .navigation-menu > ul > li > a[class='active'] {
   width: 2.5rem;
   transform: rotate(360deg);

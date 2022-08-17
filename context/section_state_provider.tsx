@@ -20,9 +20,10 @@ const useSectionStateController = () => {
         // check if a section is visible
         for (let i = 0; i < sections.length; i++) {
           const section = sections[i];
-          const section_top = section.offsetTop;
-          const section_bottom = section_top + section.offsetHeight;
-          if (scroll_position >= section_top && scroll_position <= section_bottom) {
+          const half_height = window.innerHeight / 2;
+          const section_top = section.offsetTop - half_height;
+          const section_bottom = (section_top + section.offsetHeight) - half_height;
+          if (scroll_position >= section_top && (scroll_position - half_height) <= section_bottom) {
             stateRef.current = { ...stateRef, section_number: i, total_sections: sections.length };
             setSectionState({ section_number: i, total_sections: sections.length });
             break;
