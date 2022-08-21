@@ -16,7 +16,7 @@ model User {
   avatarUrl   String
   htmlUrl     String
   reposUrl    String
-  userName    String
+  userName    String @unique
   company     String
   blog        String
   location    String
@@ -31,7 +31,7 @@ model Repository {
   id          Int @id @default(autoincrement()) @map("_id")
   name        String
   fullName    String
-  htmlUrl     String
+  htmlUrl     String @unique
   description String
   authorId    Int @map("author_id")
   author      User? @relation(fields: [authorId], references: [id])
