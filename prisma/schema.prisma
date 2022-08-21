@@ -28,13 +28,14 @@ model User {
 }
 
 model Repository {
-  id          Int @id @default(autoincrement()) @map("_id")
-  name        String
-  fullName    String
-  htmlUrl     String @unique
-  description String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now())
-  authorId    Int @map("author_id")
-  author      User? @relation(fields: [authorId], references: [id])
+  id                  Int @id @default(autoincrement()) @map("_id")
+  name                String
+  fullName            String
+  htmlUrl             String @unique
+  description         String
+  repositoryImageUrl  String @default("https://avatars.githubusercontent.com/u/35307862?v=4")
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @default(now())
+  authorId            Int @map("author_id")
+  author              User? @relation(fields: [authorId], references: [id])
 }
