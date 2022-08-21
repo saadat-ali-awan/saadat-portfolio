@@ -58,6 +58,8 @@ async function updateUserRepos(userRepos: Array<any>) {
         htmlUrl: repo.html_url || '',
         description: repo.description || '',
         authorId: user!.id || undefined,
+        createdAt: repo.created_at || '',
+        updatedAt: repo.updated_at || '',
       }
       await prisma.repository.upsert({
         where: {
@@ -72,6 +74,7 @@ async function updateUserRepos(userRepos: Array<any>) {
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  await prisma.$connect();
   const { user_name } = req.query;
   if (typeof user_name === "string") {
     try {
