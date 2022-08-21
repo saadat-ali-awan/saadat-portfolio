@@ -74,15 +74,23 @@ async function updateUserRepos(userRepos: Array<any>) {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { user_name } = req.query;
   if (typeof user_name === "string") {
-    const { userData, userRepos } = await getGithubData(user_name)
+    try {
+      const { userData, userRepos } = await getGithubData(user_name)
+      await updateUserData(userData);
+      await updateUserRepos(userRepos);
+      res.status(200).json({
+        message: "ok"
+      });
+    } catch (error: any) {
+      res.status(500).json({
+        message: error.message
+      });
+    }
 
-    updateUserData(userData);
-    updateUserRepos(userRepos);
 
-    const users = await prisma.user.findMany();
-
-    res.status(200).json({'message': 'data updated successfully.'});
   } else {
     res.status(500).json({ "message": "Error", "error-message": "Provide Username" });
   }
+
+  await prisma.$disconnect();
 }
