@@ -6,6 +6,9 @@ const prisma = new PrismaClient();
 async function getUserData(userName: String) {
   const response = await fetch(`https://api.github.com/users/${userName}`);
   const dataJson = await response.json();
+  if (dataJson.message === "Not Found") {
+    throw new Error('User does not exist on GitHub');
+  }
   return dataJson;
 }
 
@@ -21,7 +24,7 @@ async function getGithubData(userName: String) {
   return { userData, userRepos };
 }
 
-async function updateUserData(userData: any) {
+async function updateUserData(userData: any, password: String) {
   const data = {
     name: userData.name || '',
     avatarUrl: userData.avatar_url || '',
@@ -32,7 +35,8 @@ async function updateUserData(userData: any) {
     blog: userData.blog || '',
     location: userData.location || '',
     hireable: userData.hireable || true,
-    bio: userData.bio || ''
+    bio: userData.bio || '',
+    password: password as string,
   }
   await prisma.user.upsert({
     where: {
@@ -75,11 +79,11 @@ async function updateUserRepos(userRepos: Array<any>) {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   await prisma.$connect();
-  const { user_name } = req.query;
-  if (typeof user_name === "string") {
+  const { name, password } : { name: String, password: String } = req.body;
+  if (typeof name === "string") {
     try {
-      const { userData, userRepos } = await getGithubData(user_name)
-      await updateUserData(userData);
+      const { userData, userRepos } = await getGithubData(name)
+      await updateUserData(userData, password!);
       await updateUserRepos(userRepos);
       res.status(200).json({
         message: "ok"
