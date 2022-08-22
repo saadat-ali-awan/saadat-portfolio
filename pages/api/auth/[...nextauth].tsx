@@ -16,31 +16,42 @@ export default NextAuth({
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "Saadat_Ali" },
+        username: { label: "GitHub Username", type: "text", placeholder: "Saadat_Ali" },
         password: {  label: "Password", type: "password" }
       },
-      async authorize(credentials, req) {
+      authorize: async (credentials) => {
+        prisma.$connect();
         // Add logic here to look up the user from the credentials supplied
-        if (credentials) {
-          const adminUser = await prisma.backendUser.findUnique({
+        try {
+          const adminUser = await prisma.user.findFirstOrThrow({
             where: {
-              name: credentials.username,
-              password: credentials.password,
-            },
+              userName: credentials!.username,
+              password: credentials!.password
+            }
           });
-          if (adminUser) {
-            // Any object returned will be saved in `user` property of the JWT
-            return { message: 'Welcome back!' };
-          } else {
-            // If you return null then an error will be displayed advising the user to check their details.
-            return null
-            // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+          if (!adminUser) {
+            throw new Error('Invalid credentials');
           }
-        } else {
+          console.log('Valid credentials');
+          console.log(adminUser);
+          return adminUser;
+        } catch (error) {
+          console.log(error)
           return null
         }
 
       }
     })
-  ]
+  ],
+  callbacks: {
+    jwt: async ({token}) => token,
+    session: ({session}) => session,
+  },
+  secret: 'supersecret',
+  jwt: {
+    secret: 'supersecret',
+  },
+  session: {
+    strategy: 'jwt',
+  }
 });
