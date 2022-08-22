@@ -40,7 +40,7 @@ export default function Register() {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">GitHub Username</label>
         <input
           type="text"
           className="form-control"
