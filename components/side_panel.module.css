@@ -19,6 +19,36 @@
   min-width: 200px;
   min-height: 200px;
   max-height: 200px;
+  position: relative;
+  z-index: 1;
+}
+
+.age,
+.hiring-status {
+  position: absolute;
+  z-index: 2;
+  background-color: #564f8f;
+  border-radius: 2rem;
+  color: #fff;
+  padding: 4px;
+  display: flex;
+  cursor: pointer;
+}
+
+.hiring-status {
+  bottom: 0;
+  right: 0;
+  border-radius: 3rem;
+}
+
+.years-string,
+.status-complete {
+  display: none;
+}
+
+.age:hover .years-string,
+.hiring-status:hover .status-complete {
+  display: block;
 }
 
 .side-panel__profile-image >div[class="react-reveal"] {
@@ -70,22 +100,28 @@
   flex: 1;
 }
 
-.side-panel__body-item-title {
-  text-align: left;
-}
+/* .side-panel__body-item-title {
+  padding: 4px 0.5rem;
+} */
 
-.side-panel__body-item-title > h3 {
+/* .side-panel__body-item-title > h3 {
   margin-bottom: 4px;
   margin-top: 4px;
+} */
+
+.side-panel__body-item-content {
+  background-color: #564f8f;
+  color: #fff;
 }
 
 .side-panel__body-item-content > p {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .side-panel__body-item-content > p > a {
-  color: #000;
+  color: inherit;
+  text-decoration: none;
 }
 
 .side-panel__body-item {
@@ -95,7 +131,22 @@
   width: 100%;
   margin-top: 4px;
   margin-bottom: 4px;
-  justify-content: space-between;
+  justify-content: center;
+  color: #564f8f;
+}
+
+.side-panel__body-item > div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0.5rem;
+}
+
+.icon {
+  background-color: rgb(243, 243, 243);
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.8rem;
 }
 
 .side-panel__footer {
