@@ -18,7 +18,7 @@ const Jello = require('react-reveal/Jello');
 export default function SidePanel() {
   const [url, setUrl] = useState("");
   const { sectionState } = useSectionState();
-  const seedData = useAppSeedData();
+  const { seedData } = useAppSeedData();
 
   useEffect(
     () => {
@@ -41,11 +41,11 @@ export default function SidePanel() {
           <div className={styles["hiring-status"]}>
 
             <div className={styles["status-short"]}>
-              {seedData?.user.hireable ? "A" : "O"}
+              {seedData?.user?.hireable ? "A" : "O"}
             </div>
             <Jello>
               <div className={styles['status-complete']}>
-                {seedData?.user.hireable ? "ctively Looking" : "pen For Opportunity"}
+                {seedData?.user?.hireable ? "ctively Looking" : "pen For Opportunity"}
               </div>
             </Jello>
           </div>
@@ -71,10 +71,10 @@ export default function SidePanel() {
           </Flip>
         </div>
         <div className={styles["side-panel__header-title"]}>
-          <h2 role='heading'>{seedData?.user.name}</h2>
+          <h2 role='heading'>{seedData?.user?.name}</h2>
         </div>
         <div className={styles["side-panel__header-subtitle"]}>
-          <h3 data-testid="profession">{seedData?.user.company}</h3>
+          <h3 data-testid="profession">{seedData?.user?.company}</h3>
         </div>
         <div className={styles["side-panel__header-social"]}>
           <a href="https://www.github.com/Saadat123456" title="GitHub Link" target="_blank" rel="noopener">
