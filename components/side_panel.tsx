@@ -10,10 +10,15 @@ import { useSectionState } from "../context/section_state_provider";
 const Flip = require('react-reveal/Flip');
 import profile_alternate from '../public/profile_alternate.png';
 import path from 'path';
+import { useAppSeedData } from "context/app_seed_data_provider";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+
+const Jello = require('react-reveal/Jello');
 
 export default function SidePanel() {
   const [url, setUrl] = useState("");
   const { sectionState } = useSectionState();
+  const seedData = useAppSeedData();
 
   useEffect(
     () => {
@@ -29,6 +34,21 @@ export default function SidePanel() {
     <div className={styles["side-panel"]}>
       <div className={styles["side-panel__header"]}>
         <div className={styles["side-panel__profile-image"]}>
+          <div className={styles["age"]}>
+            <div className={styles["years"]}>22</div>
+            <Jello><div className={styles["years-string"]}>&nbsp; Years 9 months</div></Jello>
+          </div>
+          <div className={styles["hiring-status"]}>
+
+            <div className={styles["status-short"]}>
+              {seedData?.user.hireable ? "A" : "O"}
+            </div>
+            <Jello>
+              <div className={styles['status-complete']}>
+                {seedData?.user.hireable ? "ctively Looking" : "pen For Opportunity"}
+              </div>
+            </Jello>
+          </div>
           <Flip left opposite cascade when={sectionState.section_number===0} duration={500} delay={1000}>
             <Image
               src={profile_alternate.src}
@@ -51,10 +71,10 @@ export default function SidePanel() {
           </Flip>
         </div>
         <div className={styles["side-panel__header-title"]}>
-          <h2 role='heading'>Saadat Ali</h2>
+          <h2 role='heading'>{seedData?.user.name}</h2>
         </div>
         <div className={styles["side-panel__header-subtitle"]}>
-          <h3 data-testid="profession">Backend Developer</h3>
+          <h3 data-testid="profession">{seedData?.user.company}</h3>
         </div>
         <div className={styles["side-panel__header-social"]}>
           <a href="https://www.github.com/Saadat123456" title="GitHub Link" target="_blank" rel="noopener">
@@ -82,8 +102,8 @@ export default function SidePanel() {
       </div>
       <div className={styles["side-panel__body"]}>
         <div className={styles["side-panel__body-item"]}>
-          <div className={styles["side-panel__body-item-title"]}>
-            <h3>Email</h3>
+          <div className={styles["side-panel__body-item-title"] + " " + styles['icon']}>
+            <FontAwesomeIcon icon={faEnvelope} size="2x" />
           </div>
           <div className={styles["side-panel__body-item-content"]}>
             <p>
@@ -92,8 +112,8 @@ export default function SidePanel() {
           </div>
         </div>
         <div className={styles["side-panel__body-item"]}>
-          <div className={styles["side-panel__body-item-title"]}>
-            <h3>Phone</h3>
+          <div className={styles["side-panel__body-item-title"] + " " + styles['icon']}>
+            <FontAwesomeIcon icon={faPhone} size="2x" />
           </div>
           <div className={styles["side-panel__body-item-content"]}>
             <p>
@@ -103,34 +123,7 @@ export default function SidePanel() {
         </div>
         <div className={styles["side-panel__body-item"]}>
           <div className={styles["side-panel__body-item-title"]}>
-            <h3>Age</h3>
-          </div>
-          <div className={styles["side-panel__body-item-content"]}>
-            <p>
-              <span data-testid="age">22</span>
-            </p>
-          </div>
-        </div>
-        <div className={styles["side-panel__body-item"]}>
-          <div className={styles["side-panel__body-item-title"]}>
-            <h3>Address</h3>
-          </div>
-          <div className={styles["side-panel__body-item-content"]}>
-            <p>
-              <span data-testid="location">Rawalpindi, Pakistan</span>
-            </p>
-          </div>
-        </div>
-        <div className={styles["side-panel__body-item"]}>
-          <div className={styles["side-panel__body-item-title"]}>
-            <h3>Language</h3>
-          </div>
-          <div className={styles["side-panel__body-item-content"]}>
-            <p>
-              <span data-testid="language">English</span>
-              ,&nbsp;
-              <span data-testid="language">Urdu</span>
-            </p>
+            <h3>Rawalpindi, Pakistan</h3>
           </div>
         </div>
       </div>
