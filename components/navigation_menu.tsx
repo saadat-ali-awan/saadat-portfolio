@@ -8,7 +8,7 @@ export default function NavigationMenu() {
 
   return (
     <div className={styles["navigation-menu"]}>
-      <ul className="menu">
+      <ul className={"menu" + " " + (sectionState.section_number % 2 === 0 ? "":"even-menu")}>
         {
           Array.from(Array(sectionState.total_sections).keys()).map(i => {
             return (
