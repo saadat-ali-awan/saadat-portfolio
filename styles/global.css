@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Space+Mono&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Space Mono', monospace;
+  font-weight: 400;
 }
 
 * {
@@ -20,4 +22,19 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: #564f8f;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Rubik Dirt', sans-serif;
+  font-weight: 400;
+  color: #564f8f;
+}
+
+:not(svg) {
+  transform-origin: 0px 0px;
 }
