@@ -79,8 +79,12 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
