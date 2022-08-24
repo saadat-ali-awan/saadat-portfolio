@@ -21,6 +21,16 @@
   }
 }
 
+@media (max-width: 575px) {
+  .full-profile-image {
+    left: 70px !important;
+  }
+
+  .left-side {
+    padding: 0 !important;
+  }
+}
+
 .full-profile-image {
   height: 70%;
   left: 100px;
