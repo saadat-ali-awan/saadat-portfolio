@@ -31,12 +31,14 @@ export const AppSeedDataProvider: React.FC<{ children: ReactNode }> = ({ childre
       const latestCommit = pushEvent.payload.commits[0];
       const latestCommitData = await fetch(latestCommit.url);
       const latestCommitDataJson = await latestCommitData.json();
+      let repo_url = pushEvent.repo.url.replace('api.', '');
+      repo_url = repo_url.replace('repos/', '');
       setSeedData({
         repos: dataJson.repos,
         user: dataJson.user,
         latest_commit: {
           repo_name: pushEvent.repo.name,
-          repo_url: pushEvent.repo.url,
+          repo_url: repo_url,
           commit_message: latestCommitDataJson.commit.message,
           commit_url: latestCommitDataJson.html_url,
           commit_date: latestCommitDataJson.commit.author.date,
