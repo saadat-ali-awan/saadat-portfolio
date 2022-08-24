@@ -11,7 +11,7 @@ const Flip = require('react-reveal/Flip');
 import profile_alternate from '../public/profile_alternate.png';
 import path from 'path';
 import { useAppSeedData } from "context/app_seed_data_provider";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone, faNavicon, faClose } from "@fortawesome/free-solid-svg-icons";
 
 const Jello = require('react-reveal/Jello');
 
@@ -19,6 +19,8 @@ export default function SidePanel() {
   const [url, setUrl] = useState("");
   const { sectionState } = useSectionState();
   const { seedData } = useAppSeedData();
+
+  const [icon, setIcon] = useState(faNavicon);
 
   const date = new Date(`${seedData?.latest_commit?.commit_date}`);
 
@@ -32,14 +34,28 @@ export default function SidePanel() {
       };
       fetchUrl();
     },[])
+
+  const handleNavIconClick = () => {
+    if (icon === faNavicon) {
+      setIcon(faClose);
+    } else {
+      setIcon(faNavicon);
+    }
+  }
   return (
-    <div className={styles["side-panel"]}>
+    <>
+      <div className={styles["nav-btn"]}>
+        <button title="Nav Menu Button" onClick={handleNavIconClick}>
+          <FontAwesomeIcon icon={icon} size="2x"/>
+        </button>
+      </div>
+    <div className={styles["side-panel"] + " " + (icon === faNavicon ? styles["hidden"] : "")}>
       <div className={styles["side-panel__header"]}>
         <div className={styles["side-panel__profile-image"]}>
-          <div className={styles["age"]}>
+          {/* <div className={styles["age"]}>
             <div className={styles["years"]}>22</div>
             <Jello><div className={styles["years-string"]}>&nbsp; Years 9 months</div></Jello>
-          </div>
+            </div>
           <div className={styles["hiring-status"]}>
 
             <div className={styles["status-short"]}>
@@ -50,7 +66,7 @@ export default function SidePanel() {
                 {seedData?.user?.hireable ? "ctively Looking" : "pen For Opportunity"}
               </div>
             </Jello>
-          </div>
+          </div> */}
           <Flip left opposite cascade when={sectionState.section_number===0} duration={500} delay={1000}>
             <Image
               src={profile_alternate.src}
@@ -161,6 +177,7 @@ export default function SidePanel() {
         </div>
       </div>
     </div>
+  </>
   );
 
 }
