@@ -210,6 +210,10 @@
   color: inherit;
 }
 
+.repo-link {
+  text-align: center;
+}
+
 .card-header {
   display: flex;
   flex-direction: row;
