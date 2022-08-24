@@ -23,6 +23,7 @@
   background-color: #564f8f;
   display: inline-block;
   transition: transform 0.3s ease-in-out;
+  transform-origin: center;
 }
 
 .navigation-menu > ul[class="menu even-menu"] > li > a {
