@@ -46,7 +46,7 @@ export default function SidePanel() {
     <>
       <div className={styles["nav-btn"]}>
         <button title="Nav Menu Button" onClick={handleNavIconClick}>
-          <FontAwesomeIcon icon={icon} size="2x"/>
+          <FontAwesomeIcon icon={icon} size="3x"/>
         </button>
       </div>
       <div className={styles["side-panel"] + " " + (icon === faNavicon ? styles["hidden"] : "")}>
