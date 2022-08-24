@@ -83,7 +83,7 @@
   box-sizing: inherit;
   list-style: none;
   padding: 0px;
-  margin: 0px;
+  margin: 3rem;
 }
 
 .project_list {
@@ -100,7 +100,6 @@
   margin-bottom: 100px;
   visibility: visible;
   opacity: 1;
-  max-width: 90%;
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
