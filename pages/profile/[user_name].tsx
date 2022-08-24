@@ -5,12 +5,20 @@ import FirstSection from '@/components/homepage/first_section'
 import SecondSection from '@/components/homepage/second_section'
 import NavigationMenu from '@/components/navigation_menu'
 import { FifthSection, FourthSection, SixthSection, ThirdSection } from '@/components/homepage/third_section'
-import { AppSeedDataProvider } from 'context/app_seed_data_provider'
+import { AppSeedDataProvider, useAppSeedData } from 'context/app_seed_data_provider'
 import { useRouter } from 'next/router'
+import { useSectionState } from 'context/section_state_provider'
+import { useEffect } from 'react'
 
 export default function Home() {
   const router = useRouter()
   const { user_name } = router.query
+
+  if (!user_name) {
+    return <div className={styles['loader-container']}>Loading</div>
+  }
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,7 +27,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
       </Head>
       <div className={styles['main-body']}>
-        <AppSeedDataProvider user_name={user_name as string || ''}>
+        <AppSeedDataProvider>
           <Content />
         </AppSeedDataProvider>
       </div>
@@ -28,6 +36,16 @@ export default function Home() {
 }
 
 function Content() {
+  const { initSectionState } = useSectionState();
+  const { initSeedData } = useAppSeedData()
+
+  const router = useRouter()
+
+  useEffect(() => {
+    initSectionState()
+    const { user_name } = router.query
+    initSeedData(user_name as string)
+  },[])
   return (
     <>
       <SidePanel />
