@@ -1,6 +1,34 @@
 .first-section {
   display: flex;
   flex-direction: row !important;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  flex: 1;
+  max-height: 100vh;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.heading {
+  font-size: 3.5rem;
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 990px) {
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .full-profile-image {
+    left: 70px !important;
+  }
+
+  .left-side {
+    padding: 0 !important;
+  }
 }
 
 .full-profile-image {
