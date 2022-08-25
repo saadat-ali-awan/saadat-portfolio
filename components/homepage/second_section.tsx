@@ -12,31 +12,27 @@ export default function SecondSection() {
           <div className={styles["about-text"]}>
             <div>
               <p>
-                Hello! My name is Brittany and I enjoy creating things that live
-                on the internet. My interest in web development started back in
-                2012 when I decided to try editing custom Tumblr themes — turns
-                out hacking together a custom reblog button taught me a lot
-                about HTML & CSS!
+                Hello! My name is Saadat Ali, and I am a full-stack developer with a specialization in JavaScript,
+                CSS & HTML, React, Redux, and Ruby on Rails. With professional experience in Android and Flutter
+                development and certification in full stack development from Microverse, I can build professional
+                applications with good problem-solving skills.
               </p>
               <p className={styles["transition"]}>
-                Fast-forward to today, and I've had the privilege of working at
-                <a title="advertising agency" href="https://us.mullenlowe.com/">
-                  advertising agency
-                </a>,
-                <a title="start-up" href="https://starry.com/"> a start-up</a>,
-                <a title="a huge corporation" href="https://www.apple.com/">a huge corporation
-                </a>, and
-                <a
-                  title="a student-led design studio"
-                  href="https://scout.camd.northeastern.edu/">
-                  a student-led design studio</a>. My main focus these days is building accessible, inclusive
-                products and digital experiences at
-                <a title="Upstatement" href="https://upstatement.com/">Upstatement</a>
-                for a variety of clients.
+                Currently, I&#8217;m at Microverse, a coding school that allows devs from all over the world to
+                pair-program and build projects together. Here I have learned about the professional tools that we
+                can use to make projects easy to manage and modify in the future.
               </p>
               <p>
-                I also recently launched a course that covers everything you
-                need to build a web app with the Spotify API using Node & React.
+                I began my career as a Freelance Android Developer for a startup. Working there I learned how to
+                gather software requirements and work on tight deadlines. The experience helped me understand
+                that completing a task is more important than being perfect.
+              </p>
+              <p>
+                Being a gold medalist is a small brag, but I am proud that I finished my graduation in Computer
+                Engineering with honors which helped me learn that being consistent is the key to success.
+                Also, I participated in Hackathon for Android Development, and my team was placed second out of
+                fifty teams that participated. This competition taught me to challenge myself in a competitive
+                environment and manage to do the task within time.
               </p>
               <p>
                 Here are a few technologies I've been working with recently:
@@ -46,9 +42,9 @@ export default function SecondSection() {
               <li>JavaScript</li>
               <li>TypeScript</li>
               <li>React</li>
-              <li>Eleventy</li>
+              <li>Ruby on Rails</li>
               <li>Node.js</li>
-              <li>WordPress</li>
+              <li>Next.js</li>
             </ul>
           </div>
           <div className={styles["about-pic"]}>

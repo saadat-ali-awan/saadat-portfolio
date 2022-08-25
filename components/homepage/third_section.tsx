@@ -14,7 +14,8 @@ export function ThirdSection() {
   let [ selected, setSelected ] = useState<Repository[]>([] as Repository[]);
   useEffect(() => {
     let shuffled = seedData?.repos?.sort(() => Math.random() - 0.5 );
-    setSelected(shuffled?.slice(0,4) as Repository[]);
+    let filtered = shuffled?.filter((repo: Repository) => repo.description !== null && repo.description !== '');
+    setSelected(filtered?.slice(0,4) as Repository[]);
   },[seedData])
 
   return (

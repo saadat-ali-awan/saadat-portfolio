@@ -71,8 +71,8 @@ export default function SidePanel() {
               <Image
                 src={profile_alternate.src}
                 alt="profile_image_alternate"
-                width={200}
-                height={200}
+                layout="fill"
+                objectFit="cover"
                 className={styles["side-panel_profile-image"]}
                 data-testid="profile_image_alternate"
               />
@@ -81,8 +81,8 @@ export default function SidePanel() {
               <Image
                 src="https://avatars.githubusercontent.com/u/35307862?v=4"
                 alt="profile_image"
-                width={200}
-                height={200}
+                layout="fill"
+                objectFit="cover"
                 className={styles["side-panel_profile-image"]}
                 data-testid="profile_image"
               />
