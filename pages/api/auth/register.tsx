@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Add post data to database in BackendUser table
   try {
-    const response = await fetch(path.join(process.cwd(), 'Saadat-Portfolio', 'api', 'github-data'), {
+    const response = await fetch(path.join(process.cwd(), 'api', 'github-data'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

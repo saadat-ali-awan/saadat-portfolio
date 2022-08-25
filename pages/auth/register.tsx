@@ -23,7 +23,7 @@ export default function Register() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // post data to /api/auth/register
-    fetch(path.join(process.cwd(), 'Saadat-Portfolio', 'api', "auth", "register"), {
+    fetch(path.join(process.cwd(), 'api', "auth", "register"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

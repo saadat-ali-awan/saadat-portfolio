@@ -28,7 +28,7 @@ export default function SidePanel() {
     () => {
       // get resume link from api
       const fetchUrl = async () => {
-        const response = await fetch(path.join(process.cwd(), 'Saadat-Portfolio', 'api', "resume-link"));
+        const response = await fetch(path.join(process.cwd(), 'api', "resume-link"));
         const data = await response.json();
         setUrl(data.url);
       };
