@@ -28,7 +28,7 @@ export default function SidePanel() {
     () => {
       // get resume link from api
       const fetchUrl = async () => {
-        const response = await fetch(`http://127.0.0.1:3000/api/resume-link`);
+        const response = await fetch(`https://portfolio-xi-amber-45.vercel.app/:3000/api/resume-link`);
         const data = await response.json();
         setUrl(data.url);
       };

@@ -23,7 +23,7 @@ export default function Register() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // post data to /api/auth/register
-    fetch(`http://127.0.0.1:3000/api/auth/register`, {
+    fetch(`https://portfolio-xi-amber-45.vercel.app/:3000/api/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
