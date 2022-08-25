@@ -28,7 +28,7 @@ export default function SidePanel() {
     () => {
       // get resume link from api
       const fetchUrl = async () => {
-        const response = await fetch('https://portfolio-xi-amber-45.vercel.app/api/resume-link');
+        const response = await fetch(`https://portfolio-xi-amber-45.vercel.app/:3000/api/resume-link`);
         const data = await response.json();
         setUrl(data.url);
       };
@@ -71,8 +71,8 @@ export default function SidePanel() {
               <Image
                 src={profile_alternate.src}
                 alt="profile_image_alternate"
-                width={200}
-                height={200}
+                layout="fill"
+                objectFit="cover"
                 className={styles["side-panel_profile-image"]}
                 data-testid="profile_image_alternate"
               />
@@ -81,8 +81,8 @@ export default function SidePanel() {
               <Image
                 src="https://avatars.githubusercontent.com/u/35307862?v=4"
                 alt="profile_image"
-                width={200}
-                height={200}
+                layout="fill"
+                objectFit="cover"
                 className={styles["side-panel_profile-image"]}
                 data-testid="profile_image"
               />

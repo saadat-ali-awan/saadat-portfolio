@@ -44,8 +44,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 60px;
     position: fixed;
     right: 0;
     top: 0;
@@ -141,6 +139,11 @@
   justify-content: space-around;
   max-width: 200px;
   width: 100%;
+}
+
+.side-panel__header-social a {
+  color: #564f8f;
+  text-decoration: none;
 }
 
 .side-panel__body {
@@ -317,4 +320,22 @@
   background-color: #564f8f;
   color: #fff;
   font-size: 0.8rem;
+}
+
+@media only screen and (max-height: 850px) {
+  .side-panel__profile-image {
+    min-width: 120px;
+    min-height: 120px;
+    max-height: 120px;
+  }
+}
+
+@media only screen and (max-height: 650px) {
+  .latest-commit-card {
+    display: none;
+  }
+
+  .side-panel__body-item-content {
+    font-size: 0.8rem;
+  }
 }
