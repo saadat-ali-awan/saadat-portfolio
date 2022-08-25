@@ -18,7 +18,7 @@ export const AppSeedDataProvider: React.FC<{ children: ReactNode }> = ({ childre
   const [seedData, setSeedData] = useState<SeedData>();
 
   const initSeedData = async (user_name: string) => {
-    const data = await fetch(path.join(process.cwd(), 'api', user_name, 'app-seed'));
+    const data = await fetch(`https://portfolio-xi-amber-45.vercel.app/api/${user_name}/app-seed`);
     const dataJson = await data.json();
     const commits_data = await fetch(`https://api.github.com/users/${user_name}/events/public?per_page=100&page=1`,{
       headers: {
