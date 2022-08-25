@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import { FormEvent } from "react";
+import path from 'path';
 
 export default function Register() {
   // Create Registration Form
@@ -22,7 +23,7 @@ export default function Register() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // post data to /api/auth/register
-    fetch("/api/auth/register", {
+    fetch(path.join(process.cwd(), 'Saadat-Portfolio', 'api', "auth", "register"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

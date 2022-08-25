@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
 import PasswordValidator from "password-validator";
+import path from 'path';
 
 const prisma = new PrismaClient();
 const schema = new PasswordValidator();
@@ -24,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Add post data to database in BackendUser table
   try {
-    const response = await fetch(`http://localhost:3000/api/github-data`, {
+    const response = await fetch(path.join(process.cwd(), 'Saadat-Portfolio', 'api', 'github-data'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
