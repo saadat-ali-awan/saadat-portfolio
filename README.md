@@ -1,29 +1,46 @@
-# Next.js + Jest
+> Portfolio Application
 
-This example shows how to configure Jest to work with Next.js.
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
+## Built With
 
-## How to Use
+- Next.js
+- Prisma.io
+- Next Auth
+- Jest
+- React Reveal
+- GitHub Api
+- Postgres Sql
 
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
+## Getting Started
 
-In your terminal, run the following command:
+To get a local copy follow these simple example steps.  
 
-```bash
-npx create-next-app --example with-jest with-jest-app
-```
+1.- Open the terminal window and clone the repository using this command:  
+`git clone git@github.com:Saadat123456/Saadat-Portfolio.git` 
 
-```bash
-yarn create next-app --example with-jest with-jest-app
-```
+2.- Change the directory to the saadat-portfolio directory  
+`cd saadat_portfolio`  
+3.- Install the project's dependencies by running this command:   
+`yarn`
+4.- Add PostgreSQLDatabase Url to .env file
+5.- To run the application the following command
+`yarn dev`
 
-```bash
-pnpm create next-app --example with-jest with-jest-app
-```
+## Authors
 
-## Run Jest Tests
+👤 **Saadat Ali**
 
-```bash
-npm test
-```
+- GitHub: [@githubhandle](https://github.com/Saadat123456)
+- Twitter: [@twitterhandle](https://twitter.com/Saadat02021999)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/saadatali1999/)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
