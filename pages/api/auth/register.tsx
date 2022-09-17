@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Add post data to database in BackendUser table
   try {
-    const response = await fetch(`https://portfolio-xi-amber-45.vercel.app/api/github-data`, {
+    const response = await fetch(`${process.env["BASE_URL"]}/api/github-data`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

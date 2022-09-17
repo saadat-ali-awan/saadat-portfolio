@@ -15,7 +15,7 @@ import { faEnvelope, faPhone, faNavicon, faClose } from "@fortawesome/free-solid
 
 const Jello = require('react-reveal/Jello');
 
-export default function SidePanel() {
+export default function SidePanel({baseUrl}: {baseUrl: string}) {
   const [url, setUrl] = useState("");
   const { sectionState } = useSectionState();
   const { seedData } = useAppSeedData();
@@ -28,7 +28,7 @@ export default function SidePanel() {
     () => {
       // get resume link from api
       const fetchUrl = async () => {
-        const response = await fetch(`https://portfolio-xi-amber-45.vercel.app/api/resume-link`);
+        const response = await fetch(`${baseUrl}/api/resume-link`);
         const data = await response.json();
         setUrl(data.url);
       };

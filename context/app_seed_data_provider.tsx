@@ -14,11 +14,11 @@ export const AppSeedDataContext = createContext<AppSeedState>( { seedData: {}, i
 export const useAppSeedData = () => useContext(AppSeedDataContext);
 
 // Create Context Provider that will fetch data from server and pass it to all components
-export const AppSeedDataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const AppSeedDataProvider: React.FC<{ children: ReactNode, base_url: string }> = ({ children, base_url }) => {
   const [seedData, setSeedData] = useState<SeedData>();
 
   const initSeedData = async (user_name: string) => {
-    const data = await fetch(`https://portfolio-xi-amber-45.vercel.app/api/${user_name}/app-seed`);
+    const data = await fetch(`${base_url}/api/${user_name}/app-seed`);
     const dataJson = await data.json();
     const commits_data = await fetch(`https://api.github.com/users/${user_name}/events/public?per_page=100&page=1`,{
       headers: {

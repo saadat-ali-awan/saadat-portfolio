@@ -11,6 +11,8 @@ export default function MyApp({ Component, pageProps: {
   session,
   ...pageProps
 } }: AppProps) {
+
+  console.log(process.env["BASE_URL"]);
   return (
     <SessionProvider session={session}>
       <SectionStateProvider >
