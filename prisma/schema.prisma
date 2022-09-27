@@ -11,23 +11,76 @@ datasource db {
 }
 
 model User {
+  id              Int @id @default(autoincrement()) @map("_id")
+  userProfileid   Int @unique
+  userProfile     UserProfile @relation(fields: [userProfileid], references: [id])
+  githubProfileId Int @unique
+  githubProfile   GitHubProfile @relation(fields: [githubProfileId], references: [id])
+  password        String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  repositories    Repository[]
+  accounts        Account[]
+  sessions        Session[]
+}
+
+model GitHubProfile {
+  id        Int @id @default(autoincrement()) @map("_id")
+  login     String
+  avatarUrl String
+  htmlUrl   String
+  reposUrl  String
+  userName  String
+  company   String
+  blog      String
+  location  String
+  hireable  Boolean
+  bio       String
+  name      String?
+  user      User?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model UserProfile {
+  id                    Int @id @default(autoincrement()) @map("_id")
+  name                  String
+  avatarUrl             String
+  company               String
+  blog                  String
+  location              String
+  hireable              Boolean
+  bio                   String
+  sidePanelImageUrl     String?
+  sidePanelImageAltUrl  String?
+  fullImageUrl          String?
+  jobTitle              String
+  gitHubUrl             String?
+  linkedInUrl           String?
+  twitterUrl            String?
+  facebookUrl           String?
+  instagramUrl          String?
+  email                 String
+  phone                 String
+  resumeDriveUrl        String?
+  about                 String
+  contactMessage        String
+  skills                Skill[]
+  user                  User?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+model Skill {
   id          Int @id @default(autoincrement()) @map("_id")
   name        String
-  password    String?
-  avatarUrl   String
-  htmlUrl     String
-  reposUrl    String
-  userName    String @unique
-  company     String
-  blog        String
-  location    String
-  hireable    Boolean
-  bio         String
+  description String
+  type        String
+  imageUrl    String
+  authorId    Int @map("author_id")
+  author      UserProfile? @relation(fields: [authorId], references: [id])
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  repositories Repository[]
-  accounts      Account[]
-  sessions      Session[]
 }
 
 model Repository {
