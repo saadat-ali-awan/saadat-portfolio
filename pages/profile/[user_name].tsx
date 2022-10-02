@@ -11,7 +11,7 @@ import { useSectionState } from 'context/section_state_provider'
 import { useEffect } from 'react'
 import FooterSection from '@/components/homepage/footer_section'
 
-export default function Home() {
+export default function Home({ base_url }: { base_url: string }) {
   const router = useRouter()
   const { user_name } = router.query
 
@@ -22,21 +22,30 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
-      </Head>
       <div className={styles['main-body']}>
-        <AppSeedDataProvider>
-          <Content />
+        <AppSeedDataProvider base_url={ base_url }>
+          <Content baseUrl={base_url} />
         </AppSeedDataProvider>
       </div>
     </div>
   )
 }
+export async function getStaticProps() {
+  return {
+    props: {
+      base_url: process.env.BASE_URL,
+    }
+  }
+}
 
-function Content() {
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: true
+  }
+}
+
+function Content({ baseUrl }: { baseUrl: string }) {
   const { initSectionState } = useSectionState();
   const { initSeedData } = useAppSeedData()
 
@@ -49,7 +58,12 @@ function Content() {
   },[])
   return (
     <>
-      <SidePanel />
+      <Head>
+        <title>Portfolio</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+      </Head>
+      <SidePanel base_url={ baseUrl } />
       <NavigationMenu />
       <main className={styles['main']}>
         <FirstSection />
