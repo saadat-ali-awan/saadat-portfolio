@@ -13,23 +13,6 @@ datasource db {
 model User {
   id              Int @id @default(autoincrement()) @map("_id")
   userProfileid   Int @unique
-  userProfile     UserProfile @relation(fields: [userProfileid], references: [id])
-  githubProfileId Int @unique
-  githubProfile   GitHubProfile @relation(fields: [githubProfileId], references: [id])
-  finalProfileId  Int @unique
-  finalProfile    FinalProfile @relation(fields: [finalProfileId], references: [id])
-  password        String?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  repositories    Repository[]
-  accounts        Account[]
-  sessions        Session[]
-}
-
-model FinalProfile {
-  id        Int @id @default(autoincrement()) @map("_id")
-  user      User?
-  userId    Int @unique
   login     String
   avatarUrl String
   htmlUrl   String
@@ -41,8 +24,15 @@ model FinalProfile {
   hireable  Boolean
   bio       String
   name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  userProfile     UserProfile @relation(fields: [userProfileid], references: [id])
+  githubProfileId Int @unique
+  githubProfile   GitHubProfile @relation(fields: [githubProfileId], references: [id])
+  password        String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  repositories    Repository[]
+  accounts        Account[]
+  sessions        Session[]
 }
 
 model GitHubProfile {
