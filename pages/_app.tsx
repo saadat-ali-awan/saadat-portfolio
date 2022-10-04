@@ -1,23 +1,17 @@
-import '@/styles/global.css'
-import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
-import { config } from "@fortawesome/fontawesome-svg-core";
-import type { AppProps } from 'next/app';
-import { SectionStateProvider } from 'context/section_state_provider';
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
 import { SessionProvider } from 'next-auth/react';
+import { Session } from 'next-auth';
 
-config.autoAddCss = false;
-
-export default function MyApp({ Component, pageProps: {
-  session,
-  ...pageProps
-} }: AppProps) {
-
-  console.log(process.env["BASE_URL"]);
+function MyApp({
+  Component,
+  pageProps
+}: AppProps<{session: Session}>) {
   return (
-    <SessionProvider session={session}>
-      <SectionStateProvider >
-        <Component {...pageProps} />
-      </SectionStateProvider>
+    <SessionProvider session={pageProps.session}>
+      <Component {...pageProps} />
     </SessionProvider>
-  );
+  )
 }
+
+export default MyApp
