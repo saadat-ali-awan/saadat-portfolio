@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import { FormEvent } from "react";
 import path from 'path';
 
-export default function Register() {
+export default function Register({ base_url }: { base_url: string }) {
   // Create Registration Form
   const [form, setForm] = useState({
     username: "",
@@ -12,7 +12,6 @@ export default function Register() {
 
   // handle form input change
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.name);
     setForm({
       ...form,
       [e.target.name]: e.target.value,
@@ -23,12 +22,12 @@ export default function Register() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // post data to /api/auth/register
-    fetch(`https://portfolio-xi-amber-45.vercel.app/api/auth/register`, {
+    fetch(`${base_url}/api/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
+      },
+      body: JSON.stringify(form),
     }).then((res) => {
       if (res.status === 200) {
         console.log("Registration Successful");
@@ -81,4 +80,19 @@ export default function Register() {
       </button>
     </form>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      base_url: process.env.BASE_URL,
+    }
+  }
+}
+
+export function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: true
+  }
 }
