@@ -24,7 +24,7 @@ const CreateProfile = () => {
         <link rel="icon" href="/Portfolio.png" />
       </Head>
       Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      <button onClick={() => signIn()}>Sign in to gain access</button>
     </>
   )
 }
