@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        Hello World
+        Create Your Own Portfolio
       </main>
     </div>
   )
