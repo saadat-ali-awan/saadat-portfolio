@@ -11,7 +11,7 @@ describe('SidePanel', () => {
     fetch.mockResponseOnce(JSON.stringify({ url: '' }));
     render(
       <SectionStateProvider>
-        <SidePanel />
+        <SidePanel baseUrl='/' />
       </SectionStateProvider>
     );
   }),
