@@ -34,7 +34,7 @@ export default NextAuth({
           }
           console.log('Valid credentials');
           console.log(adminUser);
-          return adminUser;
+          return adminUser as any;
         } catch (error) {
           console.log(error)
           return null

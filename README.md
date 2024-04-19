@@ -22,7 +22,7 @@ To get a local copy follow these simple example steps.
 `cd saadat_portfolio`  
 3.- Install the project's dependencies by running this command:   
 `yarn`
-4.- Add PostgreSQLDatabase Url to .env file
+4.- Add PostgreSQLDatabase Url to .env file. (Neon.tech Free Tier can be used)
 5.- To run the application the following command
 `yarn dev`
 
