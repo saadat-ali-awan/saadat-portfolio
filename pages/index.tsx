@@ -13,14 +13,10 @@ export default function Home() {
       <div className={styles['main-body']}>
         Hello World
       </div>
-      
-            <!-- AudienceLab Pixel Code -->
-            <Script>
-                const pixelId = '167c6fff-4e90-4a7f-b24a-c6afc1669f29';
-            </Script>
-            <Script src="https://cdn.audiencelab.io/pixel_V2.js"></Script>
-            <!-- End AudienceLab Pixel Code -->
-        
+      <Script>
+        const pixelId = '167c6fff-4e90-4a7f-b24a-c6afc1669f29';
+      </Script>
+      <Script src="https://cdn.audiencelab.io/pixel_V2.js"></Script>
     </div>
   )
 }
