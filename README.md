@@ -1,46 +1,36 @@
-> Portfolio Application
-
-
-## Built With
-
-- Next.js
-- Prisma.io
-- Next Auth
-- Jest
-- React Reveal
-- GitHub Api
-- Postgres Sql
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-To get a local copy follow these simple example steps.  
+First, run the development server:
 
-1.- Open the terminal window and clone the repository using this command:  
-`git clone git@github.com:Saadat123456/Saadat-Portfolio.git` 
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-2.- Change the directory to the saadat-portfolio directory  
-`cd saadat_portfolio`  
-3.- Install the project's dependencies by running this command:   
-`yarn`
-4.- Add PostgreSQLDatabase Url to .env file. (Neon.tech Free Tier can be used)
-5.- To run the application the following command
-`yarn dev`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Authors
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-👤 **Saadat Ali**
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- GitHub: [@githubhandle](https://github.com/Saadat123456)
-- Twitter: [@twitterhandle](https://twitter.com/Saadat02021999)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/saadatali1999/)
+## Learn More
 
+To learn more about Next.js, take a look at the following resources:
 
-## 🤝 Contributing
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Contributions, issues, and feature requests are welcome!
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Feel free to check the [issues page](../../issues/).
+## Deploy on Vercel
 
-## Show your support
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Give a ⭐️ if you like this project!
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
