@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/sections/footer/Footer";
+import { Navbar } from "@/components/sections/navbar/Navbar";
 
 export const metadata: Metadata = {
   title: "Saadat Ali",
@@ -88,6 +89,7 @@ export default async function RootLayout({
       <body
         className={`antialiased dark`}
       >
+        <Navbar />
         {children}
         <Footer />
       </body>
