@@ -3,43 +3,11 @@ import { PathName } from "./PathName";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-
-const socialLinks = [
-  {
-    href: "https://github.com/saadat-ali-awan",
-    label: "Github",
-    icon: "/brands/github.svg",
-    alt: "Github",
-  },
-  {
-    href: "https://www.linkedin.com/in/saadatali1999/",
-    label: "LinkedIn",
-    icon: "/brands/linkedin.svg",
-    alt: "LinkedIn",
-  },
-  {
-    href: "mailto:saadatali0202@gmail.com",
-    label: "E-Mail",
-    icon: "/icons/mail.svg",
-    alt: "Email",
-  },
-  {
-    href: "https://wa.me/+923360224999",
-    label: "WhatsApp",
-    icon: "/brands/whatsapp.svg",
-    alt: "WhatsApp",
-  },
-  {
-    href: "https://wellfound.com/saadatali1999",
-    label: "Wellfound",
-    icon: "/brands/wellfound.svg",
-    alt: "Wellfound",
-  },
-]
+import { socialLinks } from "@/lib/utils";
 
 export const Footer = () => (
   <div className="w-full flex justify-center items-center">
-    <footer className="flex gap-6 flex-wrap items-center justify-center flex-col p-4 md:p-10 w-full md:max-w-6xl">
+    <footer className="flex gap-6 flex-wrap items-center justify-center flex-col p-4 md:p-8 md:py-10 w-full md:max-w-6xl">
       <div className="flex gap-6 flex-col-reverse md:flex-row w-full">
         <div className="flex-[1.5] py-4 w-full max-md:gap-4 max-md:flex max-md:flex-col">
           <h5 className="text-6xl md:text-9xl font-semibold">Saadat</h5>
